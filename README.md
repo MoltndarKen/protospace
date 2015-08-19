@@ -20,7 +20,7 @@
   *avatar
   *work
   *member
-
+  *github
 ##Comment
 *text
 *user_id
@@ -29,4 +29,4 @@
 ##member
 
 ##Like
-*gem 'acts_in_relation'で実装
+  *gem 'acts_in_relation'で実装
