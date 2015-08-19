@@ -3,22 +3,29 @@
 
 
 ##Prototype
-*title
-*image
-*
+  *title
+  *introduction
+  *genre
+  *user_id
+  *github
 
+##captured_image
+  *prototype_id
+  *image
 
 ##User
   *name
   *email
   *avatar
-  *prototy
-
-##Review
+  *work
+  *member
+  *github
+##Comment
 *text
 *user_id
 *prototype_id
 
+##member
 
 ##Like
-*asoci
+  *gem 'acts_in_relation'で実装
