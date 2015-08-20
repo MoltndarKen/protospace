@@ -1,0 +1,27 @@
+= form_for @prototype do |f|
+  - if @prototype.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@prototype.errors.count, "error")} prohibited this prototype from being saved:"
+      ul
+        - @prototype.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_area :title
+  .field
+    = f.label :introduction
+    = f.text_area :introduction
+  .field
+    = f.label :genre
+    = f.text_area :genre
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :github
+    = f.text_area :github
+  .field
+    = f.label :url
+    = f.text_area :url
+  .actions = f.submit

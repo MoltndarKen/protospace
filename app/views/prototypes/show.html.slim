@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @prototype.title
+p
+  strong Introduction:
+  = @prototype.introduction
+p
+  strong Genre:
+  = @prototype.genre
+p
+  strong User:
+  = @prototype.user_id
+p
+  strong Github:
+  = @prototype.github
+p
+  strong Url:
+  = @prototype.url
+
+= link_to 'Edit', edit_prototype_path(@prototype)
+'|
+= link_to 'Back', prototypes_path
