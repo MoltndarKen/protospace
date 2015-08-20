@@ -1,0 +1,33 @@
+h1 こんにちは
+
+h1 Listing prototypes
+
+table
+  thead
+    tr
+      th Service
+      th Introduction
+      th Genre
+      th User
+      th Github
+      th ServiceLink
+      th
+      th
+      th
+
+  tbody
+    - @prototypes.each do |prototype|
+      tr
+        td = prototype.title
+        td = prototype.introduction
+        td = prototype.genre
+        td = prototype.user_id
+        td = prototype.github
+        td = prototype.url
+        td = link_to 'Details...', prototype
+        td = link_to 'Edit', edit_prototype_path(prototype)
+        td = link_to 'Destroy', prototype, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'Post Your New Wings!', new_prototype_path
