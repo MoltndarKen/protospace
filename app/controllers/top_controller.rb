@@ -1,6 +1,6 @@
 class TopController < ApplicationController
 
   def index
-    @prototypes=["ああああ","いいいい"]
+    @prototypes=Prototype.all
   end
 end
