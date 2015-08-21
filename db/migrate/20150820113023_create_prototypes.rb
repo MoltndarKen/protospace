@@ -4,7 +4,6 @@ class CreatePrototypes < ActiveRecord::Migration
       t.text :title
       t.text :introduction
       t.text :genre
-      t.integer :user_id
       t.text :github
       t.text :url
 

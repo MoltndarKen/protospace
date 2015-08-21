@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820113023) do
+ActiveRecord::Schema.define(version: 20150821083426) do
 
   create_table "prototypes", force: true do |t|
     t.text     "title"
     t.text     "introduction"
     t.text     "genre"
-    t.integer  "user_id"
     t.text     "github"
     t.text     "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "prototypes", ["user_id"], name: "index_prototypes_on_user_id", using: :btree
 
 end
