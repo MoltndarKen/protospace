@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20150821083426) do
 
   create_table "prototypes", force: true do |t|
-    t.text     "title"
+    t.string   "title"
     t.text     "introduction"
-    t.text     "genre"
+    t.string   "genre"
     t.text     "github"
     t.text     "url"
     t.datetime "created_at"

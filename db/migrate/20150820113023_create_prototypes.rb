@@ -1,9 +1,9 @@
 class CreatePrototypes < ActiveRecord::Migration
   def change
     create_table :prototypes do |t|
-      t.text :title
+      t.string :title
       t.text :introduction
-      t.text :genre
+      t.string :genre
       t.text :github
       t.text :url
 
