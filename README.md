@@ -1,31 +1,34 @@
-#database design
+# database design
 
 
 
-##Prototype
-  *title
-  *introduction
-  *genre
-  *user_id
-  *github
-  *url
-##captured_image
-  *prototype_id
-  *image
+## Prototype
+  * title
+  * introduction
+  * genre
+  * user_id
+  * github
+  * url
 
-##User
-  *name
-  *email
-  *avatar
-  *work
-  *member
-  *github
-##Comment
-*text
-*user_id
-*prototype_id
+## captured_image
+  *  prototype_id
+  *  image
 
-##member
+## User
+  * name
+  * email
+  * avatar
+  * work
+  * member
+  * github
 
-##Like
-  *gem 'acts_in_relation'で実装
+## Comment
+  * text
+  * user_id
+  * prototype_id
+
+## member
+
+## Like
+  * gem 'acts_in_relation'で実装
+
