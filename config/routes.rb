@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   namespace :prototypes do
-    resources :ranking ,:only =>[:index]
-    resources :latest ,:only =>[:index]
+    resources :ranking ,only: [:index]
+    resources :latest ,only: [:index]
   end
 end
