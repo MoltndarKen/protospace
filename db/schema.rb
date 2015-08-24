@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823092213) do
+ActiveRecord::Schema.define(version: 20150824124018) do
 
   create_table "prototypes", force: true do |t|
     t.string   "title"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150823092213) do
     t.string   "work"
     t.string   "member"
     t.text     "github"
+    t.text     "profile"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
