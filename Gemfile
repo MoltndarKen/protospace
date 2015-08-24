@@ -49,3 +49,5 @@ gem 'bootstrap-material-design', '0.1.4'
 gem 'slim-rails'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'carrierwave'
+
+
