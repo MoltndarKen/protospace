@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -57,7 +58,6 @@ Rails.application.routes.draw do
     resources :ranking ,only: [:index]
     resources :latest ,only: [:index]
   end
-  get 'users/sign_in' => 'users#sign_in'
-  resources :users, only: [:new, :create]
-  get 'users/:id' => 'users#show'
+
 end
+
