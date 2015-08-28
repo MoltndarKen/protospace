@@ -56,8 +56,8 @@ Rails.application.routes.draw do
   #   end
   namespace :prototypes do
     resources :ranking ,only: [:index]
-    resources :latest ,only: [:index]
   end
-
+  resources :prototypes, only: [:new, :create]
+  root to:  'prototypes/latest#index'
 end
 
