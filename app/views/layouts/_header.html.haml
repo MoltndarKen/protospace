@@ -10,7 +10,13 @@
       //not login
       %ul.nav.navbar-nav.navbar-right
         %li
-          - if true
+          - if user_signed_in?
+            .btn.btn-primary.navbar-btn
+              = link_to "Logout", destroy_user_session_path, method: :delete
+            .btn.btn-primary.navbar-btn
+              %a{:href => "/users/<%= current_user.id %>"}
+                YourPage
+          -else
             .btn.btn-primary.navbar-btn
               %a{:href => "/users/sign_in"}
                 Get Started
@@ -18,7 +24,10 @@
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            UserName
+            -if user_signed_in?
+              =current_user.name
+            -else
+              %p guest
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
