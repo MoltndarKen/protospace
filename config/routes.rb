@@ -59,5 +59,6 @@ Rails.application.routes.draw do
   end
   resources :prototypes, only: [:new, :create]
   root to:  'prototypes/latest#index'
+  get 'users/:id' => 'users#show'
 end
 

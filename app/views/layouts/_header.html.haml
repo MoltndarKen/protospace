@@ -14,7 +14,7 @@
             .btn.btn-primary.navbar-btn
               = link_to "Logout", destroy_user_session_path, method: :delete
             .btn.btn-primary.navbar-btn
-              %a{:href => "/users/<%= current_user.id %>"}
+              %a{:href => "/users/#{current_user.id}"}
                 YourPage
           -else
             .btn.btn-primary.navbar-btn
