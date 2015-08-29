@@ -23,17 +23,18 @@
       //login
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown",:id => "dropdownMenu1", :href => "#", :role => "button"}
             -if user_signed_in?
               =current_user.name
             -else
               %p guest
             %span.caret
-          %ul.dropdown-menu{:role => "menu"}
+          %ul.dropdown-menu{:role => "menu","aria-labelledby" => "dropdownMenu1"}
             %li
-              %a{:href => "#"} Profile Edit
+              %a{:role => "menuitem", :tabindex => "-1",:href => "#"} Profile Edit
             %li
-              %a{:href => "#"} Logout
+              %a{role: "menuitem", :tabindex => "-1", :href => "#"} Logout
+            }
         %li
           .btn.btn-primary.navbar-btn
             %a{:href => "/prototypes/new"}
