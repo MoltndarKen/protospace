@@ -4,3 +4,4 @@ class Prototypes::LatestController < ApplicationController
     @prototypes = Prototype.all
   end
 end
+
