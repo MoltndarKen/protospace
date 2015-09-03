@@ -57,4 +57,5 @@ Rails.application.routes.draw do
     resources :ranking ,only: [:index]
     resources :latest ,only: [:index]
   end
+  resources :prototypes, only: [:new,:create]
 end
