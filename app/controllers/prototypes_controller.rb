@@ -7,7 +7,7 @@ class PrototypesController < ApplicationController
   end
   private
   def create_params
-    params.require(:prototype).permit(:title,:introduction,:genre,:url,:tag_list)
+    params.require(:prototype).permit(:title, :catch_copy, :concept, :genre,:url,:web_design_list,:user_interface_list,:application_about_list)
   end
 end
 
