@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,6 +56,9 @@ Rails.application.routes.draw do
   #   end
   namespace :prototypes do
     resources :ranking ,only: [:index]
-    resources :latest ,only: [:index]
   end
+  resources :prototypes, only: [:new, :create]
+  root to:  'prototypes/latest#index'
+  get 'users/:id' => 'users#show'
 end
+
