@@ -6,7 +6,7 @@
     .row
       .col-md-12
         .cover-image-upload
-          %input{type: "file"}/
+          %input{name: "image", type: "file"}/
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
@@ -20,17 +20,17 @@
               %span +
     .row.proto-description
       .col-md-12
-        %input{type: "text", placeholder: "Catch Copy"}/
+        %input{name: "catch_copy", type: "text", placeholder: "Catch Copy"}/
       .col-md-12
-        %textarea{name: "",cols: "30", rows: "4", placeholder: "Concept"}
+        %textarea{name: "concept",cols: "30", rows: "4", placeholder: "Concept"}
       .col-md-12
         %h4 Tag List
         .row
           .col-md-3
-            %input{type: "text", placeholder: "Web Design"}/
+            %input{name: "web_design", type: "text", placeholder: "Web Design"}/
           .col-md-3
-            %input{type: "text", placeholder: "UI"}/
+            %input{name: "user_interface", type: "text", placeholder: "UI"}/
           .col-md-3
-            %input{type: "text", placeholder: "Application"}/
+            %input{name: "application_about", type: "text", placeholder: "Application"}/
     .row.text-center.proto-btn
       %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Publish
