@@ -3,7 +3,9 @@ class PrototypesController < ApplicationController
     @prototype=Prototype.new
   end
   def create
+    binding.pry
     Prototype.create(create_params)
+    redirect_to action: "new"
   end
   private
   def create_params
