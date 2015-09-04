@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904100220) do
+ActiveRecord::Schema.define(version: 20150904100534) do
 
   create_table "prototypes", force: true do |t|
     t.string   "title"
-    t.text     "introduction"
     t.string   "genre"
     t.text     "github"
     t.text     "url"
