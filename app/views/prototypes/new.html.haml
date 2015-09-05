@@ -29,11 +29,11 @@
           %h4 Tag List
           .row
             .col-md-3
-              =f.text_field :tag1_list, placeholder: "tag"
+              =text_field_tag "list[tag][]", "",  placeholder: "ex)science"
             .col-md-3
-              =f.text_field :tag2_list, placeholder: "tag"
+              =text_field_tag "list[tag][]", "", placeholder: "ex)interia"
             .col-md-3
-              =f.text_field :tag3_list, placeholder: "tag"
+              =text_field_tag "list[tag][]", "", placeholder: "ex)life"
       .row.text-center.proto-btn
         %button.btn.btn-lg.btn-primary.btn-block
           = f.submit
