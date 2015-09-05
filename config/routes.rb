@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'tags/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -60,4 +58,6 @@ Rails.application.routes.draw do
     resources :latest ,only: [:index]
   end
   resources :prototypes, only: [:new,:create]
+  resources :tags, only: [:index, :show]
+
 end
