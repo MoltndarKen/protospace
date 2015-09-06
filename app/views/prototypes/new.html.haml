@@ -1,0 +1,39 @@
+.container.proto-new
+  = form_for @prototype do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          .proto-new-title
+            = f.text_field :title ,placeholder: "Title"
+      .row
+        .col-md-12
+          .cover-image-upload
+            = f.file_field :image
+        .col-md-12
+          %ul.proto-sub-list.list-group
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.file_field :sub_image
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.file_field :sub_image
+            %li.list-group-item.col-md-4
+              .image-upload-plus
+                %span +
+      .row.proto-description
+        .col-md-12
+          =f.text_field  :catch_copy, placeholder: "Catch Copy"
+        .col-md-12
+          =f.text_area :concept ,cols: "30", rows: "4", placeholder: "Concept"
+        .col-md-12
+          %h4 Tag List
+          .row
+            .col-md-3
+              =text_field_tag "list[tag][]", "",  placeholder: "ex)science"
+            .col-md-3
+              =text_field_tag "list[tag][]", "", placeholder: "ex)interia"
+            .col-md-3
+              =text_field_tag "list[tag][]", "", placeholder: "ex)life"
+      .row.text-center.proto-btn
+        %button.btn.btn-lg.btn-primary.btn-block
+          = f.submit

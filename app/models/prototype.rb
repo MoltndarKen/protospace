@@ -1,4 +1,4 @@
 class Prototype < ActiveRecord::Base
-  #association
-  belongs_to :user
+  acts_as_taggable
+  acts_as_taggable_on :list
 end
