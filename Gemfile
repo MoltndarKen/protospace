@@ -52,3 +52,4 @@ gem 'html2haml'
 gem 'rmagick'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+
