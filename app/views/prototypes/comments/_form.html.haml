@@ -1,10 +1,10 @@
 - model_class = Comment
 .form-inline{role: "form"}
-  = form_for [:prototypes, @comment ] do |f|
+  = form_for [:prototypes, @comment ], remote: true, data: { no_turbolink: true } do |f|
     %h4 Write a comment
     .row
       .form-group.col-md-10
-        = f.text_area :text, placeholder: "Your comments", rows: "3",class: "form-control"
+        = f.text_area :text, placeholder: "Your comments", rows: "3",id: "comment_field", class: "form-control"
       .form-group.col-md-2
         =f.submit class: "btn btn-primary"
 
