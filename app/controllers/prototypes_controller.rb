@@ -4,8 +4,7 @@ class PrototypesController < ApplicationController
     3.times { @prototype.captured_images.build }
   end
   def create
-    binding.pry
-    Prototype.create(create_params)
+    current_user.prototypes.build(create_params).save
     redirect_to action: "new"
   end
   private
