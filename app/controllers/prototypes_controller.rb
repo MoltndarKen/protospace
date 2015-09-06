@@ -8,6 +8,7 @@ class PrototypesController < ApplicationController
   end
   def show
     @prototype = Prototype.find(params[:id])
+    @comment = Comment.new
   end
   private
   def create_params

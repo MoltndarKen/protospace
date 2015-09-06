@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906075227) do
+ActiveRecord::Schema.define(version: 20150906102727) do
 
   create_table "captured_images", force: true do |t|
     t.integer  "prototype_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150906075227) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text"
   end
 
   add_index "comments", ["prototype_id"], name: "index_comments_on_prototype_id", using: :btree

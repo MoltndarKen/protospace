@@ -58,10 +58,10 @@ Rails.application.routes.draw do
     resources :ranking ,only: [:index]
     resources :latest ,only: [:index]
   end
-  resources :prototypes, only: [:new, :create, :show] do
+  resources :prototypes, only: [:new, :create, :show]
+  namespace :prototypes, path: 'prototypes/:id' do
     resources :comments, only: [:create]
   end
-
   resources :tags, only: [:index, :show]
   root to:  'prototypes/latest#index'
   get 'users/:id' => 'users#show'
