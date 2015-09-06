@@ -4,3 +4,4 @@ class Prototypes::RankingController < ApplicationController
     @rankings = Prototype.all
   end
 end
+
