@@ -7,19 +7,23 @@
             = f.text_field :title ,placeholder: "Title"
       .row
         .col-md-12
-          .cover-image-upload
-            = f.file_field :image
-        .col-md-12
-          %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              .image-upload
-                = f.file_field :sub_image
-            %li.list-group-item.col-md-4
-              .image-upload
-                = f.file_field :sub_image
-            %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+          = f.fields_for :captured_images do |captured_image|
+            - if captured_image.index == 0
+              .cover-image-upload
+                = captured_image.file_field :image
+            - elsif captured_image.index < 2
+              %ul.proto-sub-list.list-group
+                %li.list-group-item.col-md-4
+                  .image-upload
+                    = captured_image.file_field :image
+            - else
+              %ul.proto-sub-list.list-group
+                %li.list-group-item.col-md-4
+                  .image-upload
+                    = captured_image.file_field :image
+                %li.list-group-item.col-md-4
+                  .image-upload-plus
+                    %span +
       .row.proto-description
         .col-md-12
           =f.text_field  :catch_copy, placeholder: "Catch Copy"
@@ -37,3 +41,4 @@
       .row.text-center.proto-btn
         %button.btn.btn-lg.btn-primary.btn-block
           = f.submit
+
