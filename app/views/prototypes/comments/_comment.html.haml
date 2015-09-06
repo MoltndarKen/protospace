@@ -1,7 +1,6 @@
 %form.form-inline{role: "form"}
-  %h4 Write a comment
+  %h4
   .row
     .form-group.col-md-10
-      %textarea.form-control{placeholder: "Your comments", rows: "3"}
-    .form-group.col-md-2
-      %button.btn.btn-primary Comment
+      .form-control
+        = comment.text

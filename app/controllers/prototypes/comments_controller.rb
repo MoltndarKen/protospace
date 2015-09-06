@@ -4,7 +4,7 @@ class Prototypes::CommentsController < ApplicationController
   end
   def create
     prototype = Prototype.find(params[:id])
-    prototype.comments.build(create_params).save
+    prototype.comments.build(text: create_params[:text], user_id: current_user.id).save
     redirect_to prototype_path
   end
   private
