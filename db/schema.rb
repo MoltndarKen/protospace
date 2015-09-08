@@ -11,16 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906061018) do
+ActiveRecord::Schema.define(version: 20150908161834) do
 
   create_table "captured_images", force: true do |t|
     t.integer  "prototype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.string   "property"
   end
 
   add_index "captured_images", ["prototype_id"], name: "index_captured_images_on_prototype_id", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.integer  "prototype_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "text"
+  end
+
+  add_index "comments", ["prototype_id"], name: "index_comments_on_prototype_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "prototypes", force: true do |t|
     t.string   "title"
