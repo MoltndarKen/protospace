@@ -51,3 +51,8 @@ gem 'carrierwave'
 gem 'html2haml'
 gem 'rmagick'
 gem 'jquery-ui-rails'
+gem 'dragonfly'
+gem 'dragonfly-s3_data_store'
+gem 's3_file_field'
+gem 'dotenv-rails', group: :development
+gem 'fog'
