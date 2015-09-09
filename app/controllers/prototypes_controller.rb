@@ -4,7 +4,7 @@ class PrototypesController < ApplicationController
   end
   def create
     Prototype.create(create_params)
-    redirect_to action: "new"
+    redirect_to root_path
   end
   def show
     @prototype = Prototype.find(params[:id])
