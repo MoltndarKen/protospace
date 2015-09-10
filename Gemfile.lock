@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/ifad/data-confirm-modal.git
+  revision: 931cab3b269c6dab301245be2b2d738b243ba169
+  specs:
+    data-confirm-modal (1.0.2)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -59,6 +66,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    commonjs (0.2.7)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -197,6 +205,13 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.7.0)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
     libv8 (3.16.14.11)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -301,6 +316,12 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.5.3)
       coffee-rails
+    twitter-bootstrap-rails (3.2.0)
+      actionpack (~> 4.1)
+      execjs (~> 2.2)
+      rails (~> 4.1)
+      railties (~> 4.1)
+    twitter-bootstrap-rails-confirm (1.0.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -318,6 +339,7 @@ DEPENDENCIES
   bootstrap-sass
   carrierwave
   coffee-rails (~> 4.0.0)
+  data-confirm-modal!
   devise
   dotenv-rails
   dragonfly
@@ -329,6 +351,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kaminari
+  less-rails
   mysql2
   paperclip
   pry-rails
@@ -341,6 +364,8 @@ DEPENDENCIES
   spring
   therubyracer
   turbolinks
+  twitter-bootstrap-rails
+  twitter-bootstrap-rails-confirm
   uglifier (>= 1.3.0)
 
 BUNDLED WITH

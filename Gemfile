@@ -56,3 +56,7 @@ gem 'dragonfly-s3_data_store'
 gem 's3_file_field'
 gem 'dotenv-rails', group: :development
 gem 'fog'
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails-confirm'
+gem "less-rails"
