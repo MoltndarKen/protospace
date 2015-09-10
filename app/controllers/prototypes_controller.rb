@@ -4,11 +4,7 @@ class PrototypesController < ApplicationController
     @prototype.captured_images.build
   end
   def create
-    @prototype = current_user.prototypes.build(create_params)
-    @prototype.captured_images.each  do |image|
-      # i == 1 ? image.property = "main" : image.property = "sub"
-    end
-    @prototype.save
+    @prototype = current_user.prototypes.build(create_params).save
     redirect_to root_path
   end
   private

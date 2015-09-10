@@ -7,28 +7,26 @@
             = f.text_field :title ,placeholder: "Title"
       .row
         .col-md-12
-          = f.fields_for :captured_images do |captured_image|
-            - if captured_image.index == 0
-              .cover-image-upload
-                = captured_image.hidden_field :property, value: "main"
-                = captured_image.file_field :image
-            - elsif captured_image.index < 2
-              %ul.proto-sub-list.list-group
-                %li.list-group-item.col-md-4
-                  .image-upload
-                    = captured_image.file_field :image
-                    = captured_image.hidden_field :property, value: "sub"
-
-            - else
-              %ul.proto-sub-list.list-group
-                %li.list-group-item.col-md-4
-                  .image-upload
-                    = captured_image.file_field :image
-                    = captured_image.hidden_field :property, value: "sub"
+          .cover-image-upload
+            = f.fields_for :captured_images do |captured_image|
+              = captured_image.hidden_field :property, value: "main"
+              = captured_image.file_field :image
+          %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
-              .image-upload-plus#add_image
-                %span
-                  +
+              .image-upload
+                = f.fields_for :captured_images do |captured_image|
+                  = captured_image.file_field :image
+                  = captured_image.hidden_field :property, value: "sub"
+          %ul.proto-sub-list.list-group
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.fields_for :captured_images do |captured_image|
+                  = captured_image.file_field :image
+                  = captured_image.hidden_field :property, value: "sub"
+          %li.list-group-item.col-md-4
+            .image-upload-plus#add_image
+              %span
+                +
       .row.proto-description
         .col-md-12
           =f.text_field  :catch_copy, placeholder: "Catch Copy"
@@ -45,5 +43,6 @@
               =text_field_tag "list[tag][]", "", placeholder: "ex)life"
       .row.text-center.proto-btn
         %button.btn.btn-lg.btn-primary.btn-block
-          = f.submit
+          = f.submit data: { confirm: "かくにんがめん。", commit: "削除する", cancel: "やっぱりやめる"}
+
 
