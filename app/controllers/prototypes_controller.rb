@@ -4,7 +4,8 @@ class PrototypesController < ApplicationController
     @prototype.captured_images.build
   end
   def create
-    @prototype = current_user.prototypes.build(create_params).save
+    @prototype = current_user.prototypes.build(create_params)
+    @prototype.save
     redirect_to root_path
   end
   private
