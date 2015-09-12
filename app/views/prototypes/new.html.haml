@@ -7,19 +7,26 @@
             = f.text_field :title ,placeholder: "Title"
       .row
         .col-md-12
-          .cover-image-upload
-            = f.file_field :image
-        .col-md-12
+          = f.fields_for :captured_images do |captured_image|
+            .cover-image-upload.img_input
+              = captured_image.hidden_field :property, value: "main"
+              = captured_image.file_field :image
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
-              .image-upload
-                = f.file_field :sub_image
+              = f.fields_for :captured_images do |captured_image|
+                .image-upload.img_input
+                  = captured_image.hidden_field :property, value: "sub"
+                  = captured_image.file_field :image
+          %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
-              .image-upload
-                = f.file_field :sub_image
-            %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+              = f.fields_for :captured_images do |captured_image|
+                .image-upload.img_input
+                  = captured_image.hidden_field :property, value: "sub"
+                  = captured_image.file_field :image
+          %li.list-group-item.col-md-4
+            .image-upload-plus#add_image
+              %span
+                +
       .row.proto-description
         .col-md-12
           =f.text_field  :catch_copy, placeholder: "Catch Copy"
@@ -35,5 +42,5 @@
             .col-md-3
               =text_field_tag "list[tag][]", "", placeholder: "ex)life"
       .row.text-center.proto-btn
-        %button.btn.btn-lg.btn-primary.btn-block
-          = f.submit
+        %button.btn.btn-lg.btn-primary.btn-block.new_comfirm
+          = f.submit data: { confirm: "新規作成しますか？？", commit: "新規作成", cancel: "編集する"},title: "新規作成"

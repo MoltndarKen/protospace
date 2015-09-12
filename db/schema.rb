@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906102727) do
+ActiveRecord::Schema.define(version: 20150912093805) do
 
   create_table "captured_images", force: true do |t|
+    t.string   "image"
     t.integer  "prototype_id"
+    t.string   "property"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   add_index "captured_images", ["prototype_id"], name: "index_captured_images_on_prototype_id", using: :btree

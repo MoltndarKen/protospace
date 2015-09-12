@@ -12,11 +12,10 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     new_user_session_path
   end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :work, :member, :profile, :avatar)
+  end
 
-
-end
-def configure_permitted_parameters
-  devise_parameter_sanitizer.for(:sign_up).push(:name,:work,:member,:profile)
 end
 
 

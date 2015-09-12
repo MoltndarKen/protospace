@@ -51,7 +51,6 @@ gem 'carrierwave'
 gem 'html2haml'
 gem 'rmagick'
 gem 'jquery-ui-rails'
-<<<<<<< HEAD
 gem 'jquery-turbolinks'
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
@@ -62,5 +61,3 @@ gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'twitter-bootstrap-rails'
 gem 'twitter-bootstrap-rails-confirm'
 gem "less-rails"
-=======
->>>>>>> add_upload_systems_user_prototype

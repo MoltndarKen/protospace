@@ -23,11 +23,11 @@
           %h4 Profile
           .user-user-profile.row
             .user-name.col-md-12
-              %textarea{name: "profile", cols: "30", rows: "4", placeholder: "Profile", style: "background-color:white;"}
+              = f.text_area :profile, cols: "30", rows: "4", placeholder: "Profile", style: "background-color:white;"
           %h4 Works
           .user-name_image.row
             .user-name.col-md-12
-              %textarea{name: "work", cols: "30", rows: "4", placeholder: "Works", style: "background-color:white;"}
+              = f.text_area :work, cols: "30", rows: "4", placeholder: "Work", style: "background-color:white;"
           .row.text-center.user-btn
             .btn.btn-lg.btn-primary.btn-block
               = f.submit
