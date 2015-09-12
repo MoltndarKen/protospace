@@ -61,3 +61,4 @@ gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'twitter-bootstrap-rails'
 gem 'twitter-bootstrap-rails-confirm'
 gem "less-rails"
+gem 'acts_in_relation'

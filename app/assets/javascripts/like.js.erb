@@ -1,0 +1,38 @@
+$(function(){
+  $(document).on('click','#like, #unlike', function(){
+    var button = $(this);
+    var prototype_id = parseInt(button.attr("data-id"));
+    // var like_status =button.attr("data-like");
+    like_status = (document.getElementById('like')) ? true : false;
+    if (like_status){
+      $.ajax({
+        type: 'DELETE',
+        url: '/likes/' + prototype_id,
+        dataType: 'json',
+        data: {
+          prototype_id: prototype_id
+        },
+        success: function(data){
+          button.children("img").attr("src", "<%= asset_path("icon_heart_off.svg") %> ");
+          button.attr('id','unlike');
+          button.children('.num').text(data.like_count)
+        }
+      });
+    }else{
+      $.ajax({
+        type: 'POST',
+        url: '/likes',
+        dataType: 'json',
+        data: {
+          prototype_id: prototype_id
+        },
+        success: function(data){
+          button.children("img").attr("src", "<%= asset_path("icon_heart_on.svg") %> ");
+          button.attr('id','like');
+          button.children('.num').text(data.like_count)
+        }
+      });
+    }
+  });
+});
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912093805) do
+ActiveRecord::Schema.define(version: 20150912103137) do
 
   create_table "captured_images", force: true do |t|
     t.string   "image"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20150912093805) do
 
   add_index "comments", ["prototype_id"], name: "index_comments_on_prototype_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "likes", force: true do |t|
+    t.integer  "target_prototype_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "prototypes", force: true do |t|
     t.string   "title"
