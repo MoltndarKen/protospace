@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904100534) do
+ActiveRecord::Schema.define(version: 20150908161834) do
+
+  create_table "captured_images", force: true do |t|
+    t.integer  "prototype_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+    t.string   "property"
+  end
+
+  add_index "captured_images", ["prototype_id"], name: "index_captured_images_on_prototype_id", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.integer  "prototype_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "text"
+  end
+
+  add_index "comments", ["prototype_id"], name: "index_comments_on_prototype_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "prototypes", force: true do |t|
     t.string   "title"
@@ -65,6 +86,7 @@ ActiveRecord::Schema.define(version: 20150904100534) do
     t.string   "member"
     t.text     "github"
     t.text     "profile"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
