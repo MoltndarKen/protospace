@@ -12,12 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
 //= require jquery.turbolinks
-//= require data-confirm-modal
-//= require twitter/bootstrap/rails/confirm
-//= require twitter/bootstrap
-=======
->>>>>>> add_upload_systems_user_prototype
 //= require turbolinks
 //= require_tree .
