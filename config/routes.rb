@@ -65,4 +65,5 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
   root to:  'prototypes/latest#index'
   get 'users/:id' => 'users#show'
+  resources :likes, only: [:create, :destroy]
 end

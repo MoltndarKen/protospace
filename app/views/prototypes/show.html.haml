@@ -12,10 +12,14 @@
             %a{href: "/users/#{@prototype.user.id}"} by User
             %span.degree "#{@prototype.user.profile} #{@prototype.user.work}"
     .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
+      %button.btn.btn-default{id: (@like_status) ? "like" : "unlike",data: {id: @prototype.id}}
+        -if current_user.liking?(@prototype)
+          = image_tag("icon_heart_on.svg")
+        -else
+          = image_tag("icon_heart_off.svg")
         Like
-        %span.num 20
+        %span.num
+          = @prototype.likers.length
   .row
     .col-md-9
       = image_tag("#{@prototype.captured_images.first.image.url}", class: 'img-responsive')
