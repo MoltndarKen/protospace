@@ -11,18 +11,21 @@
             .cover-image-upload.img_input
               = captured_image.hidden_field :property, value: "main"
               = captured_image.file_field :image
+              = image_tag "", width: "100%", height: "100%", style: "display: none;"
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
               = f.fields_for :captured_images do |captured_image|
                 .image-upload.img_input
                   = captured_image.hidden_field :property, value: "sub"
                   = captured_image.file_field :image
+                  = image_tag "", width: "100%", height: "100%", style: "display: none;"
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
               = f.fields_for :captured_images do |captured_image|
                 .image-upload.img_input
                   = captured_image.hidden_field :property, value: "sub"
                   = captured_image.file_field :image
+                  = image_tag "", width: "100%", height: "100%", style: "display: none;"
           %li.list-group-item.col-md-4
             .image-upload-plus#add_image
               %span
