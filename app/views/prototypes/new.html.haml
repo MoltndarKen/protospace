@@ -45,5 +45,4 @@
             .col-md-3
               =text_field_tag "list[tag][]", "", placeholder: "ex)life"
       .row.text-center.proto-btn
-        %button.btn.btn-lg.btn-primary.btn-block.new_comfirm
-          = f.submit data: { confirm: "新規作成しますか？？", commit: "新規作成", cancel: "編集する"},title: "新規作成"
+        = f.submit 'いったれ！！', data: { confirm: "新規作成しますか？？", commit: "新規作成", cancel: "編集する"},class: "btn btn-lg btn-primary btn-block new_comfirm", title: "新規作成"
