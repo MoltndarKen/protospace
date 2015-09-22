@@ -6,9 +6,9 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.active{role: "presentation"}
-          %a{href: "#"} Popular PROTO
+          %a{href: "/prototypes/ranking"} Popular PROTO
         %li{role: "presentation"}
-          %a{href: "#"} Newest PROTO
+          %a{href: "/prototypes/latest"} Newest PROTO
       %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
 .container
   .row
@@ -32,7 +32,7 @@
                 .proto-user
                   %a{href: "#"} by #{prototype.user.name}
                 .proto-posted
-                  Apr 26
+                  =prototype.created_at.strftime("%Y/%m/%d(#{%w(Sun Mon Tue Wed Thu Fri Sat)[prototype.created_at.wday]})")
               %ul.proto-tag-list.list-inline
                 - prototype.tag_list.each do |tag|
                   -tag_id = ActsAsTaggableOn::Tag.find_by(name: tag)
