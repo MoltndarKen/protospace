@@ -14,10 +14,10 @@
   .row
     .col-sm-12.proto-content
       .thumbnail
-        %button{style: "width: 100%; height: 50px; font-size: 2rem; font-weight: 300; padding-bottom: 3px; color: #999; background-color: #eee;", class: "btn btn-tag"} TAG-NAME
+        %button{style: "width: 100%; height: 50px; font-size: 2rem; font-weight: 300; padding-bottom: 3px; color: #999; background-color: #eee;", class: "btn btn-tag"} #{@tag}
         .tag-meta
           %a{href: "#", style: "display: block; font-size: 1.3rem; border-radius: 2px; margin: 0 -2px 2px;", class: "label label-default tag-list-number"}
-            16
+            #{@tag.taggings_count}
             %i Projects
 .container.proto-list
   .row
@@ -27,17 +27,17 @@
           %a{href: "/prototypes/#{prototype.id}"}
             = image_tag("#{prototype.captured_images.first.image.url}")
             .caption
-              %h3 Salvation Army on iPad App Wireframe
+              %h3 #{prototype.title}
               .proto-meta
                 .proto-user
                   %a{href: "#"} by #{prototype.user.name}
                 .proto-posted
                   Apr 26
               %ul.proto-tag-list.list-inline
-                %li
-                  %a{href: "#", class: "btn btn-default"} #{}
-                %li
-                  %a{href: "#", class: "btn btn-default"} wireframe
+                - prototype.tag_list.each do |tag|
+                  -tag_id = ActsAsTaggableOn::Tag.find_by(name: tag)
+                  %li
+                    = link_to tag, tag_path(tag_id), class: "btn btn-default"
 .text-center
   %ul.pagination
     %li.disabled
