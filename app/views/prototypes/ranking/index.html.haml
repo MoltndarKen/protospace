@@ -9,7 +9,7 @@
           %a{href: "/prototypes/ranking"} Popular PROTO
         %li{role: "presentation"}
           %a{href: "/prototypes/latest"} Newest PROTO
-      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
+      %a.btn.btn-default.col-lg-1{href: "/tags"} View Tags
 .container.proto-list
   .row
     =render partial: "ranking",collection: @rankings

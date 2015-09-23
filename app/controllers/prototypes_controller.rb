@@ -6,6 +6,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype = Prototype.find(params[:id])
     @comment = Comment.new
+    @sub_images = @prototype.captured_images.where(property: "sub")
   end
   def create
     current_user.prototypes.build(create_params).save
