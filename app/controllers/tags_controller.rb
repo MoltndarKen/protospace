@@ -5,6 +5,6 @@ class TagsController < ApplicationController
   def show
     @tag = ActsAsTaggableOn::Tag.find_by(params[:id])
     proto_tags = ActsAsTaggableOn::Tagging.where(tag_id: params[:id])
-    @prototypes = proto_tags.map{|proto_tag| Prototype.find(proto_tag.taggable_id)}
+    @prototypes = Prototype.where(id:proto_tags.map{|proto_tag| Prototype.find(proto_tag.taggable_id)}).page(params[:page]).per(10)
   end
 end

@@ -62,3 +62,8 @@ gem 'twitter-bootstrap-rails'
 gem 'twitter-bootstrap-rails-confirm'
 gem "less-rails"
 gem 'acts_in_relation'
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
