@@ -10,10 +10,9 @@
             %a{href: "#"}
               = "by #{latest.user.name}"
           .proto-posted
-            Apr 26
+            =latest.created_at.strftime("%Y/%m/%d(#{%w(Sun Mon Tue Wed Thu Fri Sat)[latest.created_at.wday]})")
         %ul.proto-tag-list.list-inline
-          %li
-            %a{href: "#", class: "btn btn-default"} iPad
-          %li
-            %a{href: "#", class: "btn btn-default"} wireframe
-
+          - latest.tag_list.each do |tag|
+            - tag_id = ActsAsTaggableOn::Tag.find_by(name: tag)
+            %li
+              = link_to tag, tag_path(tag_id),class: "btn btn-default"
